@@ -39,8 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             root.style.display = "block";
             
-            // pauseMenu.style.left = `${event.data.x * window.innerWidth}px`;
-            // pauseMenu.style.top = `${event.data.y * window.innerHeight}px`;
+            }
+    });
+        document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            if (menu) {
+                fetch('https://ns-pausemenuv2/continue', {
+                    method: 'POST',
+                    body: JSON.stringify({})
+                })
+            } 
         }
     });
     
